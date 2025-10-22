@@ -20,7 +20,7 @@ if uploaded_file and job_desc:
 
     documents = [resume_text, job_desc]
     tfidf = TfidfVectorizer(stop_words='english',
-    ngram_range=(1,2).fit_transform(documents)
+    ngram_range=(1,2)).fit_transform(documents)
     similarity = cosine_similarity(tfidf[0:1], tfidf[1:2])[0][0]
 
     score = round(similarity * 100, 2)
